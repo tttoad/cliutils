@@ -25,6 +25,7 @@ require (
 require (
 	github.com/influxdata/line-protocol/v2 v2.2.1
 	github.com/prometheus/client_golang v1.14.0
+	github.com/robfig/cron/v3 v3.0.1
 	google.golang.org/protobuf v1.28.1
 )
 
