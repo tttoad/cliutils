@@ -162,7 +162,7 @@ func InitCustomizeRoot(opt *Option) (*zap.Logger, error) {
 	}
 
 	c := cron.New()
-	c.AddFunc("@hourly", func() { lumberLog.Rotate() })
+	c.AddFunc("50 59 * * * *", func() { lumberLog.Rotate() })
 	c.Start()
 
 	return newOnlyMessageRootLogger(lumberLog)
