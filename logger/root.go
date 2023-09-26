@@ -161,7 +161,7 @@ func InitCustomizeRoot(opt *Option) (*zap.Logger, error) {
 		Compress: opt.Compress,
 	}
 
-	c := cron.New()
+	c := cron.New(cron.WithSeconds())
 	c.AddFunc("50 59 * * * *", func() { lumberLog.Rotate() })
 	c.Start()
 
